@@ -36,7 +36,7 @@ Open your browser and type localhost:3000 in url bar and hit Enter
 
 Hi, I am Priyansh Patidar, First Year undergrad at NITK Surathkal, an aspiring Software Engineer and an Enthusiast Photographer
 
-- [@thecodesync.in Instagram](https://www.instagram.com/thecodesync.in/) I share Coding Related learning content here
+- [@thecodesync.in Instagram](https://www.instagram.com/thecodesync.in/) I share Coding Related learning content here. "good days :P"
 - [Github](https://github.com/priyansh32) You can find some of my projects here
-- [Twitter](https://twitter.com/priyansh_32) Sometimes share my journey in Web Development here
-- [@Priyanshh32 Instagram](https://www.instagram.com/priyanshh32/) I share my photography works here
+- [Twitter](https://twitter.com/priyanshh32) Sometimes share my journey in Web Development here
+- [Instagram](https://www.instagram.com/priyanshh32/) I share my photography works here
