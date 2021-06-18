@@ -1,4 +1,4 @@
-# EasyTask Task Manager (To-do App) - Major Projext 1
+# EasyTask Task Manager (To-do App) - Major Project 1
 
 EasyTask Task Manager is a simple Web Application built with Nodejs and MongoDB to manage your tasks<br>
 This is a Basic application, more functionality will be added later (If I get time)
