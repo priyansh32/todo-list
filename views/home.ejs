@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/css/style.css">
+    <link rel="shortcut icon" href="/Public/images/List.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <title>TaskTrack</title>
+</head>
+
+<body>
+    <!-- Top navigationbar -->
+    <div class="navbar">
+        <div class="logo flex flex-aic">
+            <img style="filter: invert(1);" src="/Public/images/notes.png" alt="">
+            <h1>TaskTrack</h1>
+        </div>
+        <div>
+            <a href="#todo-items"><img src="/Public/images/down-arrow.svg" alt="Go to To-do List"></a>
+        </div>
+    </div>
+    <!-- Form Element to create new tasks -->
+    <div class="todo-wrapper container flex flex-aic flex-jcc">
+
+        <form class="flex flex-fdc " action="/create" method="post" id="todo-form">
+            <h2>Add a New Task </h2>
+            <input type="text" maxlength="80" name="desc" placeholder="What do you need to do?" required
+                id="description">
+            <input type="date" name="date" id="date" required>
+            <select name="category" required>
+                <option value="Personal">Personal</option>
+                <option value="College">College</option>
+                <option value="Home">Home</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="submit" value="Add Note &rarr;">
+        </form>
+        <div class="flex flex-fdc">
+            <img id="illustration" src="/Public/images/5469596.svg" alt="Time Management">
+            <a href="https://www.freepik.com/free-photos-vectors/illustrations"
+                style="font-size: 0.5rem; text-align: center; color: rgb(60, 60, 60);">Illustrations
+                vector
+                created by pikisuperstar -
+                www.freepik.com</a>
+        </div>
+
+    </div>
+    <div id="todo-items" class="todo-items container">
+        <!-- all items will be inserted here -->
+    </div>
+    <!-- footer -->
+    <footer class="container">
+        <p>Designed and Developed by Priyansh Patidar</p>
+        <a href="https://github.com/priyansh32"><img src="/Public/images/github.svg" alt="Github"></a>
+        <a href="https://twitter.com/priyansh_32"><img src="/Public/images/twitter.svg" alt="Twitter"></a>
+        <a href="https://www.instagram.com/priyanshh32/"><img src="/Public/images/instagram.svg" alt="Instagram"></a>
+    </footer>
+    <script src="/Public/app/js/app.js"></script>
+</body>
+
+</html>
