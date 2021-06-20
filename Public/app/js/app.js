@@ -82,7 +82,7 @@ async function getToDo() {
         </div>
         <div class="flex todo-task-buttons-cont">`
         if (element.done == true) {
-            html += `<button class="todo-task-buttons flex flex-aic flex-jcc" style="background-color: grey; color: black; border: none; opacity: 0.7;" onclick="markComplete(this)" data-id="${element._id}"><img
+            html += `<button class="todo-task-buttons flex flex-aic flex-jcc" style="background-color: grey; color: black; border: none; opacity: 0.7;" disabled="true" onclick="markComplete(this)" data-id="${element._id}"><img
             src="/Public/images/check.svg" alt="tick">Completed</button>
             <button class="todo-task-buttons flex flex-aic flex-jcc" onclick="delTodo(this)" data-id="${element._id}">Delete</button>
             </div>`
@@ -106,7 +106,7 @@ async function delTodo(e) {
         method: 'DELETE'
     })
     response = await response.json()
-    console.log(response)
+    console.log('Task Deleted:', response)
 }
 
 //function to mark a task as complete
