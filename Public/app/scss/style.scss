@@ -129,7 +129,29 @@ body {
   }
 }
 @import "form";
-
+.quote {
+  position: relative;
+  min-height: 4rem;
+  width: fit-content;
+  max-width: 60rem;
+  font-style: italic;
+  border-bottom: 1px solid white;
+  :last-child {
+    text-align: end;
+    color: gray;
+  }
+}
+.before {
+  &::before {
+    content: "";
+    max-width: 86vw;
+    width: 60rem;
+    height: 4rem;
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: #181a20;
+  }
+}
 footer {
   border-top: solid white 1px;
   font-size: 0.75rem;

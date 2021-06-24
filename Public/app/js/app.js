@@ -1,5 +1,5 @@
 const todoContainer = document.querySelector('.todo-items')
-
+const quoteContainer = document.querySelector('.quote')
 //Setting Default value of Date to current Date
 let date = new Date();
 document.getElementById('date').defaultValue =
@@ -21,8 +21,6 @@ async function sendData(e) {
             category: form.children[3].value
         })
     })
-    random = form.children[2].value
-    console.log(form.children[2].value)
     response = await response.json()
 
     if (response.error) {
@@ -137,3 +135,15 @@ function decideColor(category) {
             return 'Black';
     }
 }
+
+//function to get quote using STANDS4quotes api
+//comment this if you don't have a api token
+async function getQuote() {
+    let response = await fetch('/getQuote')
+    response = await response.json()
+    response = response.result
+    quoteContainer.children[0].innerHTML = response.quote
+    quoteContainer.children[1].innerHTML = `~ ${response.author}`
+    quoteContainer.classList.remove('before')
+}
+getQuote()

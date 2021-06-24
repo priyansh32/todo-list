@@ -38,4 +38,13 @@ router.put('/done/:id', async (req, res) => {
     res.send(updatedItem)
 })
 
+//add STANDS4API uid and token are saved in environemnt variables
+//comment this section if you don't have a api token
+router.get('/getQuote', async (req, res) => {
+    let url = `https://www.stands4.com/services/v2/quotes.php?uid=${process.env.STANDS4API_uid}&tokenid=${process.env.STANDS4API_tokenid}&searchtype=RANDOM&format=json`
+    console.log(url)
+    let quote = await fetch(url)
+    quote = await quote.json()
+    res.send(quote)
+})
 module.exports = router

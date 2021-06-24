@@ -123,7 +123,6 @@ body {
 .todo-task-category {
   margin-left: 2rem;
   text-align: center;
-  background: orange;
   padding: 0.25rem 1rem;
   width: 6rem;
 }
@@ -131,7 +130,6 @@ body {
 .todo-task-buttons {
   height: 2rem;
   font-weight: bold;
-  border: none;
   padding: 0 1rem;
   color: white;
   background: transparent;
@@ -263,6 +261,33 @@ body {
 
 ::placeholder {
   color: white;
+}
+
+.quote {
+  position: relative;
+  min-height: 4rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 60rem;
+  font-style: italic;
+  border-bottom: 1px solid white;
+}
+
+.quote :last-child {
+  text-align: end;
+  color: gray;
+}
+
+.before::before {
+  content: "";
+  max-width: 86vw;
+  width: 60rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #181a20;
 }
 
 footer {
