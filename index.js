@@ -1,9 +1,10 @@
 const express = require('express')
+const dotenv = require('dotenv')
+dotenv.config()
+
 const db = require('./config/mongoose')
 
-
 const app = express()
-const PORT = 3000
 
 //setting up the view engine
 app.set('view engine', 'ejs')
@@ -18,8 +19,8 @@ app.use('/Public', express.static('Public'))
 app.use('/', require('./routes/index'))
 
 //starting the server on port 3000
-app.listen(PORT, (err) => {
+app.listen(process.env.PORT, (err) => {
     if (err)
         return console.log(`Error + ${err.message}`)
-    console.log(`Server Started Successfully on PORT ${PORT}`)
+    console.log(`Server Started Successfully on PORT ${process.env.PORT}`)
 })
