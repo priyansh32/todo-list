@@ -61,7 +61,7 @@ document.addEventListener("submit", (e) => {
 
 //function to retrieve all tasks from the database
 async function getToDo() {
-    let response = await fetch('/getToDos')
+    let response = await fetch('/data/getToDos')
     response = await response.json()
     //instead of logging in console I have to display on the page in good way
     console.log(response)
@@ -100,7 +100,7 @@ getToDo()
 //function to delete a task
 async function delTodo(e) {
     e.parentElement.parentElement.remove()
-    let response = await fetch(`/delete/${e.dataset.id}`, {
+    let response = await fetch(`/data/delete/${e.dataset.id}`, {
         method: 'DELETE'
     })
     response = await response.json()
@@ -113,7 +113,7 @@ async function markComplete(e) {
     e.setAttribute('disabled', 'true')
     e.innerHTML = `<img
     src="/Public/images/check.svg" alt="tick">Completed`
-    let response = await fetch(`/done/${e.dataset.id}`, {
+    let response = await fetch(`/data/done/${e.dataset.id}`, {
         method: 'PUT'
     })
     response = await response.json()
@@ -139,7 +139,7 @@ function decideColor(category) {
 //function to get quote using STANDS4quotes api
 //comment this if you don't have a api token
 async function getQuote() {
-    let response = await fetch('/getQuote')
+    let response = await fetch('/data/getQuote')
     response = await response.json()
     response = response.result
     quoteContainer.children[0].innerHTML = response.quote

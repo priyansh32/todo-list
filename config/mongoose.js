@@ -3,6 +3,12 @@ mongoose.connect(`${process.env.MONGO_URI}`, { useNewUrlParser: true, useUnified
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Could not connect to MongoDB...', err.message))
 
+// mongoose.connect(`mongodb://localhost:27017/todo-app`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
+//     .then(() => {
+//         console.log('Connected to MongoDB')
+//     })
+//     .catch(err => console.error('Could not connect to MongoDB...', err.message));
+
 const db = mongoose.connection
 
 db.on('error', console.error.bind(console, "Error connecting to MongoDB"));
