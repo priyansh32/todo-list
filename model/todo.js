@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { User } = require('./user');
 
 const toDoSchema = new mongoose.Schema({
     category: {
@@ -17,6 +18,10 @@ const toDoSchema = new mongoose.Schema({
     done: {
         type: Boolean,
         default: false
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, {
     timestamps: true

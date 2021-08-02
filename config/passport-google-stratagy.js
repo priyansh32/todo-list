@@ -1,7 +1,7 @@
 const passport = require('passport')
 const googleStratagy = require('passport-google-oauth').OAuth2Strategy
 
-const { User } = require('../model/user')
+const User = require('../model/user')
 
 passport.use(new googleStratagy({
     clientID: process.env.GOOGLEOAUTH_CLIENT_ID,
