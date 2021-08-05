@@ -1,7 +1,7 @@
 const passport = require('passport')
 const googleStratagy = require('passport-google-oauth').OAuth2Strategy
 
-const { User } = require('../model/user')
+const User = require('../model/user')
 
 passport.use(new googleStratagy({
     clientID: process.env.GOOGLEOAUTH_CLIENT_ID,
@@ -14,7 +14,6 @@ passport.use(new googleStratagy({
         if (user) {
             return done(null, user);
         } else {
-            console.log(profile)
             let user = new User({
                 name: profile.displayName,
                 email: profile.emails[0].value,

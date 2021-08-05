@@ -1,6 +1,6 @@
 const express = require('express');
 const ToDo = require('../model/todo')
-
+const User = require('../model/user')
 const router = express.Router();
 const fetch = require('node-fetch');
 
@@ -10,7 +10,8 @@ router.post('/create', async (req, res) => {
         category: req.body.category,
         date: req.body.date,
         desc: req.body.desc,
-        done: false
+        done: false,
+        user: req.user._id
     })
     try {
         await todo.save()
@@ -21,8 +22,21 @@ router.post('/create', async (req, res) => {
     }
 })
 router.get('/getTodos', async (req, res) => {
-    let todos = await ToDo.find({}).sort({ date: 1 })
-    return res.send(todos)
+    User.findOne({ email: req.user.email }, (err, user) => {
+        if (err) {
+            return console.log(err);
+        }
+        if (user) {
+            ToDo.find({ user: user._id }, (err, todos) => {
+                if (err) {
+                    return console.log(err);
+                }
+                if (todos) {
+                    return res.json(todos);
+                }
+            });
+        }
+    });
 })
 router.delete('/delete/:id', async (req, res) => {
     let delItem = await ToDo.findByIdAndDelete(req.params['id'])
