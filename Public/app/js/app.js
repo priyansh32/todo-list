@@ -63,8 +63,6 @@ document.addEventListener("submit", (e) => {
 async function getToDo() {
     let response = await fetch('/data/getToDos')
     response = await response.json()
-    //instead of logging in console I have to display on the page in good way
-    console.log(response)
     response.forEach(element => {
         let date = element.date
         date = `${date.slice(8, 10)}-${date.slice(5, 7)}-${date.slice(0, 4)}`
