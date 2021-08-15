@@ -17,7 +17,7 @@ Get your Auth tokens from [Google Developer Console](https://console.developers.
 ## Starting the Server
 
 ```bash
-npm local-start
+npm run local-start
 ```
 
 or
