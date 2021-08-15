@@ -3,7 +3,7 @@
 EasyTask Task Manager is a simple Web Application built with Nodejs and MongoDB to manage your tasks<br>
 This is a Basic application, more functionality will be added later (If I get time)
 
-## Setting Up
+## Setting Up Developement
 
 Make sure node is installed on your machine
 Use the node package manager [npm] to install node modules.
@@ -12,18 +12,18 @@ Use the node package manager [npm] to install node modules.
 npm install
 ```
 
+Get your Auth tokens from [Google Developer Console](https://console.developers.google.com/])
+
 ## Starting the Server
 
-make sure to start the mongodb before running the server
-
 ```bash
-npm start
+npm local-start
 ```
 
 or
 
 ```bash
-node index.js
+node -r dotenv/config index.js
 ```
 
 Server will start Running at port 3000
